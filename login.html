@@ -1,10 +1,31 @@
-footer>
-    <div class="footer-container">
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-        </ul>
-    </div>
-</footer></ul></div>
+<body>
+  <div class="overlay"></div>
+  <div class="animated-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="login-container">
+    <form class="login-box" action="#" method="POST">
+      <h2>Course Registration</h2>
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="tel" name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}" />
+      <select name="course" required>
+        <option value="">Select Course</option>
+        <option value="web">Web Development</option>
+        <option value="ai">Artificial Intelligence</option>
+        <option value="data">Data Science</option>
+        <option value="cyber">Cyber Security</option>
+      </select>
+      <button type="submit">Login</button>
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
