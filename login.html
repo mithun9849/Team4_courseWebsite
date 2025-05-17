@@ -1,29 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Registration</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .animated-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .shape {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    .login-container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-box input,
+    .login-box select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .login-box button {
+      padding: 12px 20px;
+      border: none;
+      background-color: #ffffff;
+      color: #333;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .forgot-password {
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .forgot-password a {
+      color: #cce0ff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .animated-shapes .shape:nth-child(1) { left: 10%; animation-duration: 18s; }
+    .animated-shapes .shape:nth-child(2) { left: 25%; animation-duration: 22s; width: 50px; height: 50px; }
+    .animated-shapes .shape:nth-child(3) { left: 40%; animation-duration: 20s; width: 30px; height: 30px; }
+    .animated-shapes .shape:nth-child(4) { left: 60%; animation-duration: 25s; width: 60px; height: 60px; }
+    .animated-shapes .shape:nth-child(5) { left: 75%; animation-duration: 19s; width: 45px; height: 45px; }
+    .animated-shapes .shape:nth-child(6) { left: 90%; animation-duration: 24s; width: 35px; height: 35px; }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      font-size: 0.9em;
+      z-index: 1;
+    }
+  </style>
 </head>
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-button">Login</button>
-        </form>
-        <div class="options">
-            <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
-            <p>Don't have an account? <a href="/register" class="register-link">Sign up</a></p>
-        </div>
-    </div>
-</body>
-</html>
